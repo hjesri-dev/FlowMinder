@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_BACKEND_URL": "https://flowminder-app.onrender.com"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://source.zoom.us https://zoom.us https://*.zoom.us https://vercel.live; style-src 'self' 'unsafe-inline' https://source.zoom.us https://zoom.us https://*.zoom.us; img-src 'self' data: blob: https://zoom.us https://*.zoom.us; connect-src 'self' https://zoom.us https://*.zoom.us https://flowminder-app.onrender.com wss://flowminder-app.onrender.com ws://localhost:4000 https://vercel.live wss://vercel.live; frame-src 'self' https://zoom.us https://*.zoom.us https://vercel.live"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

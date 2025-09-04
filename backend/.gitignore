@@ -1,0 +1,15 @@
+# Node modules folder
+node_modules/
+
+# Environment variable files
+.env
+
+# Logs
+logs
+*.log
+
+# OS-specific files
+.DS_Store
+
+# Temporary files
+*.tmp
